@@ -9,9 +9,9 @@ function init(xAxisParam, yAxisParam){
 
   // Define the chart's margins as an object
   var margin = {
-    top: 60,
-    right: 60,
-    bottom: 100,
+    top: 20,
+    right: 20,
+    bottom: 80,
     left: 160
   };
 
@@ -32,9 +32,9 @@ function init(xAxisParam, yAxisParam){
           .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
   factorY = 1;
-  yLabel1 = "Heavy Drinker (%)";
+  yLabel1 = "Heavy Drinker (M > 2, F > 1 / Day) (%)";
   yLabel2 = "Obese (BMI > 30) (%)";
-  yLabel3 = "Sedentary (%)";
+  yLabel3 = "Sedentary (No Physical Activity / Month) (%)";
   yLabel4 = "Current Smoker (%)";
   xLabel1 = "Not High School Grad (%)";
   xLabel2 = "High School Grad or eq. (%)";
@@ -136,6 +136,7 @@ function init(xAxisParam, yAxisParam){
         .attr("x", svgHeight/3)
         .attr("y", -svgWidth/20)
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init(xAxisParam, "heavyDrinker");
@@ -152,6 +153,7 @@ function init(xAxisParam, yAxisParam){
         .attr("x", svgHeight/3)
         .attr("y", -(svgWidth/20 + (margin.left/8)))
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init(xAxisParam, "obese");
@@ -168,6 +170,7 @@ function init(xAxisParam, yAxisParam){
         .attr("x", svgHeight/3)
         .attr("y", -(svgWidth/20 + (margin.left/4)))
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init(xAxisParam, "sedentary");
@@ -184,6 +187,7 @@ function init(xAxisParam, yAxisParam){
             .attr("x", svgHeight/3)
             .attr("y", -(svgWidth/20 + (margin.left/2.7)))
             .style("font-weight", "")
+            .style("font-size", "12px")
             .style("fill", "black")
             .on("click", function () {
               init(xAxisParam, "currentSmoker");
@@ -197,8 +201,9 @@ function init(xAxisParam, yAxisParam){
         .attr("text-anchor","middle")
         .attr("class", "notHighSchoolGrad")
         .attr("x", -svgWidth/3)
-        .attr("y", chartHeight+margin.top-(margin.bottom/5))
+        .attr("y", chartHeight+margin.top + (margin.bottom / 7))
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init("notHighSchoolGrad", yAxisParam);
@@ -212,8 +217,9 @@ function init(xAxisParam, yAxisParam){
         .attr("text-anchor","middle")
         .attr("class", "highSchoolGrad")
         .attr("x", -svgWidth/3)
-        .attr("y", chartHeight+margin.top)
+        .attr("y", chartHeight+margin.top + (margin.bottom / 3.0))
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init("highSchoolGrad", yAxisParam);
@@ -227,8 +233,9 @@ function init(xAxisParam, yAxisParam){
         .attr("text-anchor","middle")
         .attr("class", "someCollege")
         .attr("x", -svgWidth/3)
-        .attr("y", chartHeight+margin.top+(margin.bottom/2.5))
+        .attr("y", chartHeight+margin.top + (margin.bottom / 2.0))
         .style("font-weight", "")
+        .style("font-size", "12px")
         .style("fill", "black")
         .on("click", function () {
           init("someCollege", yAxisParam);
@@ -242,8 +249,9 @@ function init(xAxisParam, yAxisParam){
           .attr("text-anchor","middle")
           .attr("class", "bachelorOrHigher")
           .attr("x", -svgWidth/3)
-          .attr("y", chartHeight+margin.top+(margin.bottom/5))
+          .attr("y", chartHeight+margin.top + (margin.bottom / 1.5))
           .style("font-weight", "")
+          .style("font-size", "12px")
           .style("fill", "black")
           .on("click", function () {
             init("bachelorOrHigher", yAxisParam);
