@@ -19,7 +19,7 @@ function init(xAxisParam, yAxisParam){
   var chartWidth = svgWidth - margin.left - margin.right;
   var chartHeight = svgHeight - margin.top - margin.bottom;
 
-  d3.select("svg").remove();
+  // d3.select("svg").remove();
 
   // Select body, append SVG area to it, and set its dimensions
   var svg = d3
@@ -84,6 +84,8 @@ function init(xAxisParam, yAxisParam){
           .attr("cy", yLoc)
           .attr("r", 12)
           .style("fill", "lightblue" )
+          .on("mouseover", function(data, index) {
+            d3.select(this).transition().attr("fill", "blue"); })
         .append("title")
           .attr("text-anchor","middle")
           .text(data['state']+"\n"+'------------------'+"\n"+xAxisParam+": "+data[xAxisParam]+"\n"+yAxisParam+": "+data[yAxisParam])
@@ -263,7 +265,6 @@ function init(xAxisParam, yAxisParam){
 
     d3.selectAll("." + yAxisParam).style("font-weight", "bold");
     d3.selectAll("." + yAxisParam).style("fill", "blue");
-
 
   });
 
