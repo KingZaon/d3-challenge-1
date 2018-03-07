@@ -67,6 +67,8 @@ d3.csv("data.csv", function(err, myData) {
   // Another axis can be assigned to the variable during an onclick event.
   var currentAxisLabelX = "obese";
 
+  var currentAxisLabelY = "bachelorOrHigher";
+
   // Call findMinAndMax() with default
   findMinAndMax(currentAxisLabelX);
 
@@ -82,23 +84,29 @@ d3.csv("data.csv", function(err, myData) {
     .offset([80, -60])
     // The html() method allows mix of JS and HTML in callback function
     .html(function(data) {
-      var bandName = data.state;
-      var numHits = Number(data.bachelorOrHigher);
-      var bandInfo = Number(data[currentAxisLabelX]);
-      var bandString;
+      var itemName = data.state;
+      var itemEdu = Number(data.bachelorOrHigher);
+      var itemInfo = Number(data[currentAxisLabelX]);
+      var itemString;
       // Tooltip text depends on which axis is active
       if (currentAxisLabelX === "obese") {
-        bandString = "Obese (%): ";
+        itemString = "Obese (%): ";
       }
       else {
-        bandString = "Smoker (%): ";
+        itemString = "Smoker (%): ";
       }
-      return bandName +
-        "<br>" +
-        bandString +
-        bandInfo +
-        "<br> (%): " +
-        numHits;
+      if (currentAxisLabelY === "bachelorOrHigher") {
+        eduString = "Col Grad (%): ";
+      }
+      else {
+        eduString = "HS Grad (%): ";
+      }
+      return itemName +
+        "<hr>" +
+        eduString +
+        itemEdu + "<br>" +
+        itemString +
+        itemInfo;
     });
 
   // Create tooltip
