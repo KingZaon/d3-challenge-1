@@ -69,6 +69,8 @@ d3.csv("data.csv", function(err, myData) {
 
   var currentAxisLabelY = "bachelorOrHigher";
 
+  writeAnalysis(currentAxisLabelX, currentAxisLabelY);
+
   // Call findMinAndMax() with default
   findMinAndMax(currentAxisLabelX);
 
@@ -212,6 +214,7 @@ d3.csv("data.csv", function(err, myData) {
       .classed("inactive", true);
 
     clickedAxis.classed("inactive", false).classed("active", true);
+    writeAnalysis(currentAxisLabelX, currentAxisLabelY);
   }
 
   d3.selectAll(".axis-text").on("click", function() {
@@ -223,7 +226,6 @@ d3.csv("data.csv", function(err, myData) {
     // Grab the data-attribute of the axis and assign it to a variable
     // e.g. if data-axisName is "poverty," var clickedAxis = "poverty"
     var clickedAxis = clickedSelection.attr("data-axis-name");
-    console.log("current axis: ", clickedAxis);
 
     // The onclick events below take place only if the x-axis is inactive
     // Clicking on an already active axis will therefore do nothing
@@ -271,3 +273,32 @@ d3.csv("data.csv", function(err, myData) {
     }
   });
 });
+
+function writeAnalysis(xAxis, yAxis) {
+  var analysisText = parent.document.getElementById('analysis');
+
+  var responses = ["There is a strong negative correlation (-0.751735757) between having at least a Bachelor's Degree and being obese.",
+                  "There is a negative correlation (-0.617179941) between having at least a Bachelor's Degree and being a current smoker.",
+                  "There is a positive correlation (0.67396584) between being a high school graduate and being obese.",
+                  "There is a strong positive correlation (0.757923374) between being a high school graduate and being a current smoker."];
+
+  var answer;
+
+  if (xAxis === "obese") {
+    if (yAxis === "bachelorOrHigher") {
+      answer = responses[0];
+    }
+    else {
+      answer = responses[2];
+    }
+  }
+  else {
+    if (yAxis === "bachelorOrHigher") {
+      answer = responses[1];
+    }
+    else {
+      answer = responses[3];
+    }
+  }
+  analysisText.innerHTML = answer;
+};
