@@ -1,4 +1,4 @@
-var svgWidth = 960;
+var svgWidth = 900;
 var svgHeight = 500;
 
 var margin = { top: 20, right: 40, bottom: 80, left: 100 };
@@ -90,23 +90,23 @@ d3.csv("data.csv", function(err, myData) {
       var itemString;
       // Tooltip text depends on which axis is active
       if (currentAxisLabelX === "obese") {
-        itemString = "Obese (%): ";
+        itemString = "Obese: ";
       }
       else {
-        itemString = "Smoker (%): ";
+        itemString = "Smoker: ";
       }
       if (currentAxisLabelY === "bachelorOrHigher") {
-        eduString = "Col Grad (%): ";
+        eduString = "College Grad: ";
       }
       else {
-        eduString = "HS Grad (%): ";
+        eduString = "HS Grad: ";
       }
       return itemName +
         "<hr>" +
         eduString +
-        itemEdu + "<br>" +
+        itemEdu + "%<br>" +
         itemString +
-        itemInfo;
+        itemInfo + "%";
     });
 
   // Create tooltip
