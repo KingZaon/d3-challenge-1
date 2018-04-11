@@ -1,8 +1,8 @@
-# Unit 16 | Assignment - Data Journalism and D3
+# Data Journalism and D3
 
 <a target='_blank' href="https://giphy.com/gifs/newspaper-press-v2xIous7mnEYg"><img alt='Newspaper Printing (via GIPHY)' src="http://i.giphy.com/v2xIous7mnEYg.gif" /> <br><em>via GIPHY</em></a>
 
-## Background
+## Scenario:
 
 Welcome to the newsroom! You've just accepted a data visualization position for a major metro paper. You're tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs and interactives to help readers understand your findings.
 
@@ -10,13 +10,13 @@ The editor wants to run a series of feature stories about the health risks facin
 
 The beat reporters will go out and investigate the relationship you find, sourcing experts and finding anecdotes to back up your research. That's tough work, and they won't be happy about digging for a story that doesn't exist—you'll need to find a convincing correlation before you even think about pitching your first article. The editor also wants you to make a scatter plot to show the correlation—you _are_ the data visualizer, after all.
 
-## Your Task
+## Your Tasks:
 
-### Level 1: D3 Dabbler
+### Level 1:
 
 ![4-scatter](Images/4-scatter.jpg)
 
-You need to find a correlation between two data variables, each measured state by state and taken from different data sources. You'll then visualize the correlation with a scatter plot and embed the graphic into an .html file. You need to accomplish these four steps.
+Find a correlation between two data variables, each measured state by state and taken from different data sources. You'll then visualize the correlation with a scatter plot and embed the graphic into an .html file. You need to accomplish these four steps.
 
 #### 1. Find the Data
 
@@ -70,7 +70,7 @@ When your `d3.html` displays the graphic just as you'd like it to, embed it in `
 
 - - -
 
-### Level 2: Impress the Boss
+### Level 2:
 
 Why make a static graphic when D3 lets you interact with your data?
 
@@ -92,29 +92,9 @@ While the ticks on the axes allow us to infer approximate values for each circle
 
 * Check out [David Gotz's example](https://bl.ocks.org/davegotz/bd54b56723c154d25eedde6504d30ad7) to see how you should implement tooltips with d3-tip.
 
-- - -
-
-### Level 3: Mobile Moxie (Tough, but Rewarding)
-
-![9-responsive-d3.gif](Images/9-responsive-d3.gif)
-
-Sure, there's plenty of desktop readers out there, but what about tablet and phone users? How would you optimize your scatter plot so that its data is accessible to all users? This will be one of the toughest tasks when making most D3 graphics—but taking it on will also help you stand out as a thorough data visualizer.
-
-Add a function to your scatter plot that changes the look of your svg whenever the size of your window/iframe changes. D3 lacks a one-size-fits-all approach to mobile since every graph will look different depending on the topic and developer. You'll need to decide what attributes to morph for whenever the screen size changes. Make sure that the graph is visible in the `index.html` iframe.
-
-Visit these links for advice on how to accomplish this:
-
-* [Responsive Charts with D3 - Chris Amico](http://eyeseast.github.io/visible-data/2013/08/28/responsive-charts-with-d3/)
-
-* [Responsive D3 article from Safari Books Online](https://www.safaribooksonline.com/blog/2014/02/17/building-responsible-visualizations-d3-js/)
-
-* Note: Some of the code in these articles will be outdated, like the axis code—each was written before D3 4.0. Regardless, the core concept remains the same: build a function to resize your chart and fire it with `d3.select(window).on('resize', [name of your function])`.
-
-- - -
-
 ### Assessment
 
-Your final product will be assessed on the following metrics:
+The final product is assessed on the following metrics:
 
 * Completion of all steps in chosen level
 
@@ -123,9 +103,3 @@ Your final product will be assessed on the following metrics:
 * Visual attraction
 
 * Professionalism
-
-**Good luck!**
-
-## Copyright
-
-Coding Boot Camp (C) 2016. All Rights Reserved.
